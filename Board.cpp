@@ -9,13 +9,13 @@ Board::Board(int player_count) {
     set_green_base();
     set_red_base();
     set_yellow_base();
-    set_plansze();
+    set_board();
 }
 
 void Board::clean() {
     for (int iterator = 0; iterator < 11; ++iterator) {
         for (int j = 0; j < 11; ++j) {
-            board[iterator][j].pole = empty;
+            board[iterator][j].space = empty;
             clear_pawn(iterator, j);
         }
     }
@@ -23,10 +23,10 @@ void Board::clean() {
 }
 
 void Board::set_blue_base() {
-    board[0][0].pole = base_blue;
-    board[0][1].pole = base_blue;
-    board[1][0].pole = base_blue;
-    board[1][1].pole = base_blue;
+    board[0][0].space = base_blue;
+    board[0][1].space = base_blue;
+    board[1][0].space = base_blue;
+    board[1][1].space = base_blue;
 
     board[0][0].blue = 1;
     board[0][1].blue = 1;
@@ -35,10 +35,10 @@ void Board::set_blue_base() {
 }
 
 void Board::set_green_base() {
-    board[0][10].pole = base_green;
-    board[0][9].pole = base_green;
-    board[1][10].pole = base_green;
-    board[1][9].pole = base_green;
+    board[0][10].space = base_green;
+    board[0][9].space = base_green;
+    board[1][10].space = base_green;
+    board[1][9].spaec = base_green;
 
     board[0][10].green = 1;
     board[0][9].green = 1;
@@ -47,10 +47,10 @@ void Board::set_green_base() {
 }
 
 void Board::set_yellow_base() {
-    board[10][0].pole = base_yellow;
-    board[9][0].pole = base_yellow;
-    board[10][1].pole = base_yellow;
-    board[9][1].pole = base_yellow;
+    board[10][0].space = base_yellow;
+    board[9][0].space = base_yellow;
+    board[10][1].space = base_yellow;
+    board[9][1].space = base_yellow;
 
     board[10][0].yellow = 1;
     board[9][0].yellow = 1;
@@ -59,10 +59,10 @@ void Board::set_yellow_base() {
 }
 
 void Board::set_red_base() {
-    board[10][10].pole = base_red;
-    board[9][10].pole = base_red;
-    board[10][9].pole = base_red;
-    board[9][9].pole = base_red;
+    board[10][10].space = base_red;
+    board[9][10].space = base_red;
+    board[10][9].space = base_red;
+    board[9][9].space = base_red;
 
     board[10][10].red = 1;
     board[9][10].red = 1;
@@ -70,7 +70,7 @@ void Board::set_red_base() {
     board[9][9].red = 1;
 }
 
-void Board::displey() {
+void Board::display() {
 
     for (int row = 0; row < 11; ++row) {
         std::cout<<"|";
@@ -111,80 +111,80 @@ char Board::what_on_board(int row, int col) {
     }
 }
 
-void Board::set_plansze() {
+void Board::set_board() {
     for (int row = 4; row <= 6; ++row) {
-        board[row][0].pole = pole;
+        board[row][0].space = space;
         clear_pawn(row,0);
 
     }
     for (int col = 4; col <= 6; ++col) {
-        board[0][col].pole = pole;
+        board[0][col].space = space;
         clear_pawn(0,col);
     }
     for (int col = 4; col <= 6; ++col) {
-        board[10][col].pole = pole;
+        board[10][col].space = space;
         clear_pawn(10,col);
     }
     for (int row = 4; row <= 6; ++row) {
-        board[row][10].pole = pole;
+        board[row][10].space = space;
         clear_pawn(row,10);
     }
 
     // ................................
 
     for (int row = 0; row <= 4; ++row) {
-        board[row][6].pole = pole;
+        board[row][6].space = space;
         clear_pawn(row,6);
     }
     for (int row = 0; row <= 4; ++row) {
-        board[row][4].pole = pole;
+        board[row][4].space = space;
         clear_pawn(row,4);
     }
 
     for (int col = 0; col <= 4; ++col) {
-        board[4][col].pole = pole;
+        board[4][col].space = space;
         clear_pawn(4,col);
     }
     for (int col = 0; col <= 4; ++col) {
-        board[6][col].pole = pole;
+        board[6][col].space = space;
         clear_pawn(6,col);
     }
     //...................................
 
     for (int row = 10; row >= 6; --row) {
-        board[row][6].pole = pole;
+        board[row][6].space = space;
         clear_pawn(row,6);
     }
     for (int row = 10; row >= 6; --row) {
-        board[row][4].pole = pole;
+        board[row][4].space = space;
         clear_pawn(row,4);
     }
 
     for (int col = 10; col >= 6; --col) {
-        board[4][col].pole = pole;
+        board[4][col].space = space;
         clear_pawn(4,col);
 
     }
     for (int col = 10; col >= 6; --col) {
-        board[6][col].pole = pole;
+        board[6][col].space = space;
         clear_pawn(6,col);
     }
     // ...................................
 
     for (int col = 1; col <= 4; ++col) {
-        board[5][col].pole = win_blue;
+        board[5][col].space = win_blue;
         clear_pawn(5,col);
     }
     for (int row = 1; row <= 4; ++row) {
-        board[row][5].pole = win_green;
+        board[row][5].space = win_green;
         clear_pawn(row,5);
     }
     for (int col = 9; col >= 6; --col) {
-        board[5][col].pole = win_red;
+        board[5][col].space = win_red;
         clear_pawn(5,col);
     }
     for (int row = 9; row >= 6; --row) {
-        board[row][5].pole = win_yellow;
+        board[row][5].space = win_yellow;
         clear_pawn(row,5);
     }
 }
