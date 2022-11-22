@@ -38,7 +38,7 @@ void Board::set_green_base() {
     board[0][10].space = base_green;
     board[0][9].space = base_green;
     board[1][10].space = base_green;
-    board[1][9].spaec = base_green;
+    board[1][9].space = base_green;
 
     board[0][10].green = 1;
     board[0][9].green = 1;
@@ -82,31 +82,31 @@ void Board::display() {
 }
 
 char Board::what_on_board(int row, int col) {
-    if(board[row][col].pole == base_red){
+    if(board[row][col].space == base_red){
         return 'R';
     }
-    if(board[row][col].pole == base_blue){
+    if(board[row][col].space == base_blue){
         return 'B';
     }
-    if(board[row][col].pole == base_green){
+    if(board[row][col].space == base_green){
         return 'G';
     }
-    if(board[row][col].pole == base_yellow){
+    if(board[row][col].space == base_yellow){
         return 'Y';
     }
-    if(board[row][col].pole == pole){
+    if(board[row][col].space == space){
         return 'P';
     }
-    if(board[row][col].pole == win_blue){
+    if(board[row][col].space == win_blue){
         return 'b';
     }
-    if(board[row][col].pole == win_green){
+    if(board[row][col].space == win_green){
         return 'g';
     }
-    if(board[row][col].pole == win_red){
+    if(board[row][col].space == win_red){
         return 'r';
     }
-    if(board[row][col].pole == win_yellow){
+    if(board[row][col].space == win_yellow){
         return 'y';
     }
 }
