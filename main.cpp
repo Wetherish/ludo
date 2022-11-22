@@ -5,6 +5,6 @@
 
 int main() {
     Board a (2) ;
-    a.displey();
+    a.display();
     return 0;
 }
