@@ -8,6 +8,6 @@ int main() {
     a.display();
     std::cout<<"bartek"<<std::endl;
     std::cout<<"mike";
-    std::cout << "Mistrz";
+    std::cout << "Mistrasdsafdsfdaasfdz";
     return 0;
 }
