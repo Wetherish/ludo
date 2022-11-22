@@ -1,5 +1,5 @@
 //
-// Created by Bartek on 22.11.2022.
+// Created by Michal (with small help of Bartek) on 22.11.2022.
 //
 
 #ifndef LUDO_BOARD_H
