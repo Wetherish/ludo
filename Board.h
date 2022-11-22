@@ -41,8 +41,8 @@ private:
 
     char what_on_board(int row, int col);
 
-    // std::array<kwadracik>plansza[10];
-    std::array<std::array<kwadracik,11>,11> plansza;
+    // std::array<kwadracik>board[10];
+    std::array<std::array<kwadracik,11>,11> board;
 
 
 };
