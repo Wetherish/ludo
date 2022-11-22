@@ -24,7 +24,7 @@ struct square {
 class Board{
 public:
 
-    Board(int player_count);
+    explicit Board(int player_count);
     void set_space();
     void display();
     // ~Board();
