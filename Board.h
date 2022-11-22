@@ -11,7 +11,7 @@
 #include <array>
 enum type_pole{base_green, base_red, base_blue, base_yellow, win_green, win_red, win_blue, win_yellow,
     start_green, start_red, start_blue, start_yellow, empty, pole};
-struct kwadracik {
+struct square {
     int green = 0;
     int blue = 0;
     int red = 0;
@@ -42,7 +42,7 @@ private:
     char what_on_board(int row, int col);
 
     // std::array<kwadracik>board[10];
-    std::array<std::array<kwadracik,11>,11> board;
+    std::array<std::array<square,11>,11> board;
 
 
 };
