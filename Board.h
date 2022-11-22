@@ -18,7 +18,6 @@ struct square {
     int yellow = 0;
     type_pole pole;
 
-
 };
 
 
