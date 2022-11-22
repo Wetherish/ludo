@@ -26,7 +26,7 @@ public:
 
     Board(int player_count);
     void set_pole();
-    void displey();
+    void display();
     // ~Board();
 private:
 
