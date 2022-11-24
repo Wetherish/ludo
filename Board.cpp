@@ -122,6 +122,10 @@ void Board::display() {
 }
 
 char Board::what_on_board(int row, int col) {
+    if(board[row][col].space == empty){
+        return ' ';
+    }
+
     if(board[row][col].space == base_red){
         return 'R';
     }
