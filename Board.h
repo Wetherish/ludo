@@ -11,6 +11,7 @@
 #include <array>
 enum type_space{base_green, base_red, base_blue, base_yellow, win_green, win_red, win_blue, win_yellow,
     start_green, start_red, start_blue, start_yellow, empty, space};
+enum pawnn {green, red, blue, yellow};
 struct square {
     int green = 0;
     int blue = 0;
@@ -19,7 +20,12 @@ struct square {
     type_space space;
 
 };
+struct pawn{
+    pawnn type;
+    int row;
+    int col;
 
+};
 
 class Board{
 public:
@@ -27,8 +33,15 @@ public:
     explicit Board(int player_count);
     void set_space();
     void display();
+    void move();
+    void spawn();
     // ~Board();
 private:
+    pawn b1,b2,b3,b4;
+    pawn g1,g2,g3,g4;
+    pawn y1,y2,y3,y4;
+    pawn r1,r2,r3,r4;
+
 
     void clean();
     void set_blue_base();
