@@ -11,7 +11,7 @@
 #include <array>
 enum type_space{base_green, base_red, base_blue, base_yellow, win_green, win_red, win_blue, win_yellow,
     start_green, start_red, start_blue, start_yellow, empty, space};
-enum pawnn {green, red, blue, yellow};
+enum pawn_colour {green, red, blue, yellow};
 struct square {
     int green = 0;
     int blue = 0;
@@ -21,7 +21,7 @@ struct square {
 
 };
 struct pawn{
-    pawnn type;
+    pawn_colour type;
     int row;
     int col;
 
@@ -34,7 +34,12 @@ public:
     void set_space();
     void display();
     void move();
-    void spawn();
+    void spawn(pawn_colour colour, int roll);
+    int counter_blue_base = 4;
+    int counter_red_base = 4;
+    int counter_green_base = 4;
+    int counter_yellow_base = 4;
+    
     // ~Board();
 private:
     pawn b1,b2,b3,b4;
@@ -42,6 +47,7 @@ private:
     pawn y1,y2,y3,y4;
     pawn r1,r2,r3,r4;
 
+    
 
     void clean();
     void set_blue_base();
@@ -52,6 +58,7 @@ private:
     void clear_pawn(int row, int col);
 
     char what_on_board(int row, int col);
+    
 
     // std::array<kwadracik>board[10];
     std::array<std::array<square,11>,11> board;
